@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Discount Codes</title>
+  <meta charset="UTF-8">
+  <title>Med Discount Codes</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; margin: 40px; }
+    .card { border: 1px solid #ccc; padding: 20px; margin: 15px auto; width: 280px; border-radius: 8px; }
+    .code { font-size: 22px; font-weight: bold; margin: 10px 0; }
+    button { padding: 8px 12px; border: none; cursor: pointer; }
+  </style>
+  <script>
+    function copyCode(code) {
+      navigator.clipboard.writeText(code);
+      alert(code + " copied!");
+    }
+  </script>
 </head>
 <body>
-  <h1>Welcome to Discount Codes</h1>
-  <p>Site working successfully!</p>
+
+  <h2>Medical Prep Discount Codes</h2>
+
+  <div class="card">
+    <h3>Cerebellum</h3>
+    <div class="code">RAMA</div>
+    <button onclick="copyCode('RAMA')">Copy Code</button>
+  </div>
+
+  <div class="card">
+    <h3>Prepladder</h3>
+    <div class="code">DMPEZHCE</div>
+    <button onclick="copyCode('DMPEZHCE')">Copy Code</button>
+  </div>
+
+  <h3>Contact</h3>
+  <p>
+    <a href="https://wa.me/917300256359" target="_blank">WhatsApp Me</a>
+  </p>
+
 </body>
 </html>
