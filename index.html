@@ -3,220 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Discount Codes — Cerebellum & Prepladder</title>
+<title>Medical Prep — Discount Codes</title>
 
 <style>
 :root {
   --primary: #2563eb;
   --secondary: #059669;
-  --bg: #eff3ff;
-  --text: #0f172a;
+  --bg: #f4f7ff;
+  --text: #1e293b;
   --card-bg: #ffffff;
-  --border: #dce2ff;
 }
 
 .dark {
   --bg: #0f172a;
   --text: #f8fafc;
   --card-bg: #1e293b;
-  --border: #2d3a51;
 }
 
 body {
   margin: 0;
   padding: 0;
   background: var(--bg);
-  font-family: "Inter", Arial, sans-serif;
+  font-family: 'Segoe UI', Roboto, sans-serif;
   color: var(--text);
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  transition: 0.35s ease;
-}
-
-/* Fade-in animation */
-.fade-in {
-  animation: fade 0.8s ease-in-out;
-}
-
-@keyframes fade {
-  from { opacity: 0; transform: translateY(12px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
-/* Card scaling on hover */
-.card:hover {
-  transform: scale(1.02);
+  transition: 0.3s;
 }
 
 .container {
   width: 100%;
-  max-width: 600px;
-  margin: 20px;
+  max-width: 500px;
+  padding: 20px;
+}
+
+header { text-align: center; margin-bottom: 30px; }
+h1 { font-size: 28px; margin-bottom: 5px; }
+.subtitle { opacity: 0.7; font-size: 15px; }
+
+/* Professional Card Styling */
+.card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.05);
   text-align: center;
 }
 
-h1 {
-  font-size: 26px;
-  font-weight: 700;
+/* App Info Section */
+.app-info {
+  text-align: left;
+  margin: 15px 0;
+  font-size: 14px;
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.app-info ul {
+  padding-left: 20px;
+  margin: 5px 0;
+}
+
+.app-info li { margin-bottom: 5px; opacity: 0.8; }
+
+.logo {
+  max-width: 160px;
+  max-height: 80px;
   margin-bottom: 10px;
 }
 
-.subtitle {
-  font-size: 16px;
-  margin-bottom: 20px;
-  opacity: 0.8;
+.discount-label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 5px;
+  display: block;
 }
 
-.card {
-  background: var(--card-bg);
-  border-radius: 14px;
-  padding: 18px;
-  margin: 15px 0;
-  border: 1px solid var(--border);
-  box-shadow: 0 5px 14px rgba(0,0,0,0.08);
-  transition: 0.25s ease;
-}
-
-.logo {
-  width: 180px;
-  max-height: 100px; /* Limits height to keep it neat */
-  height: auto;
-  margin-bottom: 15px;
-  object-fit: contain;
-}
-
-.code-box {
+.code-wrapper {
+  background: #f0f4ff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 12px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  background: #e0e7ff;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  border: 1px solid #c7d2fe;
-  user-select: all;
+  padding: 8px 8px 8px 20px;
 }
 
-.dark .code-box {
-  background: #1e293b;
-  border: 1px solid #334155;
+.code-text {
+  font-family: monospace;
+  font-size: 20px;
+  font-weight: bold;
+  color: #1e40af;
 }
 
 .copy-btn {
-  background: var(--primary);
+  background: #1e40af;
   color: white;
   border: none;
-  padding: 8px 14px;
-  font-size: 14px;
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 3px 0 #1e40af;
-  transition: 0.15s;
+  font-weight: bold;
 }
 
-.copy-btn:active {
-  transform: translateY(2px);
-  box-shadow: 0 1px 0 #1e40af;
-}
-
-.whatsapp-btn {
-  background: var(--secondary);
+/* WhatsApp Styling */
+.whatsapp-float {
+  background: #25d366;
   color: white;
   text-decoration: none;
-  padding: 12px 22px;
-  margin-top: 25px;
-  font-size: 17px;
-  display: inline-block;
-  border-radius: 10px;
-  box-shadow: 0 4px 0 #065f46;
-  transition: 0.2s;
-}
-
-.whatsapp-btn:hover {
-  transform: scale(1.03);
-}
-
-.whatsapp-btn:active {
-  transform: translateY(3px);
-  box-shadow: 0 1px 0 #065f46;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
 }
 
 .dark-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  background: var(--card-bg);
-  border: 1px solid var(--border);
-  padding: 8px 14px;
-  border-radius: 8px;
+  margin: 20px;
   cursor: pointer;
-  font-size: 14px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.25s;
-}
-
-footer {
-  margin-top: 25px;
-  font-size: 13px;
-  opacity: 0.7;
+  background: none;
+  border: 1px solid #ccc;
+  padding: 5px 15px;
+  border-radius: 20px;
+  color: inherit;
 }
 </style>
-
 </head>
-<body class="fade-in">
+<body>
 
-<button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+<button class="dark-toggle" onclick="toggleDarkMode()">Toggle Theme</button>
 
 <div class="container">
+  <header>
+    <h1>Medical Prep Deals</h1>
+    <p class="subtitle">Verified discount codes for top platforms</p>
+  </header>
 
-  <h1 class="fade-in">Discount Codes</h1>
-  <div class="subtitle fade-in">Exclusive discount codes for medical prep platforms</div>
-
-  <div class="card fade-in">
-    <img class="logo" src="cerebellum.png.PNG" alt="Cerebellum Logo">
-    <div class="code-box">
-      <span id="cerebellum-code">RAMA</span>
-      <button class="copy-btn" onclick="copyCode('cerebellum-code')">COPY</button>
+  <div class="card">
+    <img src="cerebellum.png.PNG" class="logo" alt="Cerebellum">
+    <span class="discount-label">Special Referral Offer</span>
+    <div class="code-wrapper">
+      <span class="code-text" id="c1">RAMA</span>
+      <button class="copy-btn" onclick="copy('c1')">COPY</button>
+    </div>
+    <div class="app-info">
+      <strong>Why Cerebellum?</strong>
+      <ul>
+        <li>Top-tier faculty (BTR by Dr. Zainab Vora)</li>
+        <li>Simplified conceptual videos</li>
+        <li>Great for NEET PG & INI-CET fast revision</li>
+      </ul>
     </div>
   </div>
 
-  <div class="card fade-in">
-    <img class="logo" src="prepladder.png..PNG" alt="Prepladder Logo">
-    <div class="code-box" style="background:#d1fae5;border:1px solid #a7f3d0;">
-      <span id="prepladder-code">DMPEZHCE</span>
-      <button class="copy-btn" style="background:#059669;box-shadow:0 3px 0 #047857;" onclick="copyCode('prepladder-code')">COPY</button>
+  <div class="card">
+    <img src="prepladder.png..PNG" class="logo" alt="PrepLadder">
+    <span class="discount-label" style="color: #059669;">Maximum Savings Code</span>
+    <div class="code-wrapper" style="background: #ecfdf5; border-color: #a7f3d0;">
+      <span class="code-text" id="p1" style="color: #065f46;">DMPEZHCE</span>
+      <button class="copy-btn" style="background: #059669;" onclick="copy('p1')">COPY</button>
+    </div>
+    <div class="app-info">
+      <strong>Why PrepLadder?</strong>
+      <ul>
+        <li>India's most popular medical PG app</li>
+        <li>Dream Team Faculty & QBank 5.0</li>
+        <li>Excellent printed notes and Rapid Revision</li>
+      </ul>
     </div>
   </div>
 
-  <a class="whatsapp-btn fade-in" href="https://wa.me/917300256359" target="_blank">Chat on WhatsApp</a>
+  <center>
+    <a href="https://wa.me/917300256359" class="whatsapp-float">
+      <span>Chat for Help</span>
+    </a>
+  </center>
 
-  <footer>© Discount Page · Updated 2026</footer>
+  <footer style="text-align: center; margin-top: 40px; font-size: 12px; opacity: 0.6;">
+    © 2026 Medical Discounts • Updated Weekly
+  </footer>
 </div>
 
 <script>
-function copyCode(id) {
-  const codeText = document.getElementById(id).innerText;
-  navigator.clipboard.writeText(codeText);
-  alert("Copied: " + codeText);
+function copy(id) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text);
+  alert("Code " + text + " copied! Use it at checkout.");
 }
-
 function toggleDarkMode() {
   document.body.classList.toggle('dark');
-  const btn = document.querySelector('.dark-toggle');
-  if (document.body.classList.contains('dark')) {
-    btn.innerText = "☀️ Light Mode";
-  } else {
-    btn.innerText = "🌙 Dark Mode";
-  }
 }
 </script>
 
 </body>
 </html>
+
 
 
