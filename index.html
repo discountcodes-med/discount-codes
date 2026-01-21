@@ -81,8 +81,9 @@ h1 {
 
 .logo {
   width: 180px;
+  max-height: 80px; /* Added to keep logos uniform */
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   object-fit: contain;
 }
 
@@ -176,18 +177,16 @@ footer {
   <h1 class="fade-in">Discount Codes</h1>
   <div class="subtitle fade-in">Exclusive discount codes for medical prep platforms</div>
 
-  <!-- CEREBELLUM -->
   <div class="card fade-in">
-    <img class="logo" src="https://i.imgur.com/OtAEZ3k.png" alt="Cerebellum Logo">
+    <img class="logo" src="cerebellum.png" alt="Cerebellum Logo">
     <div class="code-box">
       <span id="cerebellum-code">RAMA</span>
       <button class="copy-btn" onclick="copyCode('cerebellum-code')">COPY</button>
     </div>
   </div>
 
-  <!-- PREPLADDER -->
   <div class="card fade-in">
-    <img class="logo" src="https://i.imgur.com/0Z0Zs0a.png" alt="Prepladder Logo">
+    <img class="logo" src="prepladder.png" alt="Prepladder Logo">
     <div class="code-box" style="background:#d1fae5;border:1px solid #a7f3d0;">
       <span id="prepladder-code">DMPEZHCE</span>
       <button class="copy-btn" style="background:#059669;box-shadow:0 3px 0 #047857;" onclick="copyCode('prepladder-code')">COPY</button>
@@ -219,3 +218,4 @@ function toggleDarkMode() {
 
 </body>
 </html>
+
