@@ -1,41 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Med Discount Codes</title>
-  <style>
-    body { font-family: Arial, sans-serif; text-align: center; margin: 40px; }
-    .card { border: 1px solid #ccc; padding: 20px; margin: 15px auto; width: 280px; border-radius: 8px; }
-    .code { font-size: 22px; font-weight: bold; margin: 10px 0; }
-    button { padding: 8px 12px; border: none; cursor: pointer; }
-  </style>
-  <script>
-    function copyCode(code) {
-      navigator.clipboard.writeText(code);
-      alert(code + " copied!");
-    }
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Discount Codes — Cerebellum & Prepladder</title>
+
+<style>
+:root {
+  --primary: #2563eb;
+  --secondary: #059669;
+  --bg: #eff3ff;
+  --text: #0f172a;
+  --card-bg: #ffffff;
+  --border: #dce2ff;
+}
+
+.dark {
+  --bg: #0f172a;
+  --text: #f8fafc;
+  --card-bg: #1e293b;
+  --border: #2d3a51;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  transition: 0.35s ease;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fade 0.8s ease-in-out;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Card scaling on hover */
+.card:hover {
+  transform: scale(1.02);
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 14px;
+  padding: 18px;
+  margin: 15px 0;
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 14px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
+}
+
+.logo {
+  width: 180px;
+  height: auto;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.code-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #e0e7ff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 1px solid #c7d2fe;
+  user-select: all;
+}
+
+.dark .code-box {
+  background: #1e293b;
+  border: 1px solid #334155;
+}
+
+.copy-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 3px 0 #1e40af;
+  transition: 0.15s;
+}
+
+.copy-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #1e40af;
+}
+
+.whatsapp-btn {
+  background: var(--secondary);
+  color: white;
+  text-decoration: none;
+  padding: 12px 22px;
+  margin-top: 25px;
+  font-size: 17px;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 0 4px 0 #065f46;
+  transition: 0.2s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.03);
+}
+
+.whatsapp-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #065f46;
+}
+
+.dark-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: 0.25s;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+</style>
+
 </head>
-<body>
+<body class="fade-in">
 
-  <h2>Medical Prep Discount Codes</h2>
+<button class="dark-toggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
 
-  <div class="card">
-    <h3>Cerebellum</h3>
-    <div class="code">RAMA</div>
-    <button onclick="copyCode('RAMA')">Copy Code</button>
+<div class="container">
+
+  <h1 class="fade-in">Discount Codes</h1>
+  <div class="subtitle fade-in">Exclusive discount codes for medical prep platforms</div>
+
+  <!-- CEREBELLUM -->
+  <div class="card fade-in">
+    <img class="logo" src="https://i.imgur.com/OtAEZ3k.png" alt="Cerebellum Logo">
+    <div class="code-box">
+      <span id="cerebellum-code">RAMA</span>
+      <button class="copy-btn" onclick="copyCode('cerebellum-code')">COPY</button>
+    </div>
   </div>
 
-  <div class="card">
-    <h3>Prepladder</h3>
-    <div class="code">DMPEZHCE</div>
-    <button onclick="copyCode('DMPEZHCE')">Copy Code</button>
+  <!-- PREPLADDER -->
+  <div class="card fade-in">
+    <img class="logo" src="https://i.imgur.com/0Z0Zs0a.png" alt="Prepladder Logo">
+    <div class="code-box" style="background:#d1fae5;border:1px solid #a7f3d0;">
+      <span id="prepladder-code">DMPEZHCE</span>
+      <button class="copy-btn" style="background:#059669;box-shadow:0 3px 0 #047857;" onclick="copyCode('prepladder-code')">COPY</button>
+    </div>
   </div>
 
-  <h3>Contact</h3>
-  <p>
-    <a href="https://wa.me/917300256359" target="_blank">WhatsApp Me</a>
-  </p>
+  <a class="whatsapp-btn fade-in" href="https://wa.me/917300256359" target="_blank">Chat on WhatsApp</a>
+
+  <footer>© Discount Page · Updated 2026</footer>
+</div>
+
+<script>
+function copyCode(id) {
+  const codeText = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(codeText);
+  alert("Copied: " + codeText);
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle('dark');
+  const btn = document.querySelector('.dark-toggle');
+  if (document.body.classList.contains('dark')) {
+    btn.innerText = "☀️ Light Mode";
+  } else {
+    btn.innerText = "🌙 Dark Mode";
+  }
+}
+</script>
 
 </body>
 </html>
